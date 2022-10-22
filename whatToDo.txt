@@ -1,0 +1,38 @@
+[1] GET /   url	   /api/Clubs
+	(localhost)
+
+-----> Clubs Table에 있는 데이터를 JSON형식으로 리스폰스 해주는 시스템
+
+Clubs Table 포함 컬럼
+
+ID, ClubName, School, Info, DateCreated, DateDeleted
+Int    Str      Str   Str    Date&Time    Date&Time  <-서식
+
+[2]Post /url/api/Clubs
+
+----->Clubs Table에 새로운 row가 추가되게
+\\
+-mySQL migration-
+
+-sqlite-
+
+
+CREATE SCHEMA clubity DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+CREATE TABLE member
+(
+	id INT AUTO_INCREMENT,
+    club_name VARCHAR(32) NOT NULL,
+    school VARCHAR(15) NOT NULL,
+    info VARCHAR(20) DEFAULT 'N/A',
+    date_created DATE,
+    date_deleted DATE,
+    PRIMARY KEY(id)
+)
+    
+
+MySQL retrieves and displays DATETIME values in 'YYYY-MM-DD hh:mm:ss' format. 
+The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+
+INSERT INTO clubs VALUES
+(1, '앱미사', '명지전문대', '개발동아리', '2022-10-18 13:30:00', );
